@@ -1,3 +1,8 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body></body>
 <video id=video  controls="controls">
 您的浏览器不支持 video 标签。
 </video>
@@ -5,13 +10,14 @@
 <script type="text/javascript">
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
+    var r = decodeURIComponent(window.location.search).substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
     }
 	
 var video = document.getElementById("video");
-
 video.src = getQueryString("url");;
 video.play();	
+
 </script>
+</html>
  
