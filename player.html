@@ -1,9 +1,9 @@
-<video id=video  controls="controls">
+<video id=video controls="controls">
 您的浏览器不支持 video 标签。
 </video>
 
 <script type="text/javascript">
-// v2
+// v3
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = decodeURIComponent(window.location.search).substr(1).match(reg);
@@ -11,7 +11,18 @@ function getQueryString(name) {
     }
 	
 var video = document.getElementById("video");
-video.src = getQueryString("url");;
+video.src = getQueryString("url");
+
+var mode = getQueryString("mode");
+
+if (mode == '2') {
+	video.width = "360";
+	video.height="640";
+}else{
+	video.width = "640";
+	video.height="360";
+}
+
 video.play();	
 
 </script>
