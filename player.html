@@ -70,7 +70,10 @@ var baseUrl = getQueryString("baseUrl");
 var ext;
 
 if (type == null){ //默认为音频
-	type = 'audio';
+	if(url != null){
+		if(url.match(/\.mp4$/)) type = 'video';
+		else type = 'audio';
+	}else type = 'audio';
 }
 
 if (type == 'audio'){
