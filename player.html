@@ -21,6 +21,7 @@ function getQueryString(name) {
 function play(currentUrl) {
 	var targetUrl;
 	if(baseUrl != null) targetUrl = baseUrl + currentUrl;
+	else targetUrl = currentUrl;
 
 	var items = document.getElementsByName("item");
 	
